@@ -1,0 +1,27 @@
+package br.com.ehmf.AppProdutos.resource;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import br.com.ehmf.AppProdutos.model.Produtos;
+
+@RestController
+@RequestMapping("/api")
+public class AppProdutosResource {
+
+	@GetMapping
+	public String getApi() {
+		return "API Java funcionando! 😎😎";
+	}
+	
+	@GetMapping("getProduto")
+	public Produtos getProduto() {
+		Produtos produto = new Produtos();
+		produto.setCodigoBarras("5646465446");
+		produto.setNome("Monito LG");
+		produto.setPreco(1000.0);
+		return produto;
+	}
+	
+}
